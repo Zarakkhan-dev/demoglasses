@@ -1,6 +1,6 @@
 
-import connectDB from "../Backend/connectDB";
-import user from "../Backend/User_Schema";
+import connectDB from "./Backend/connectDB";
+import user from "./Backend/User_Schema";
 connectDB();
 export default async function handler(req, res) {
     if(req.method==='POST'){
