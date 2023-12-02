@@ -7,3 +7,12 @@
     background-color:#9ebbe8 ;
     padding: 1vh 2vh;
 }
+.slider{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+
+    width:90%;
+    margin: 3vh auto auto auto;
+}

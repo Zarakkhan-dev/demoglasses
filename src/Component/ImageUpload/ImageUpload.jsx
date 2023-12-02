@@ -6,7 +6,7 @@ import Link from "next/link";
 const ImageUpload = () => {
   const [file, updatefile] = useState("");
   const [imageaddress, updateAddress] = useState("");
-
+  const [serverresponse,updateresponse]= useState("");
   const [UserData, updateData] = useState([]);
 
   function previewFile(file) {
@@ -27,6 +27,7 @@ const ImageUpload = () => {
       const result = await axios.post("api/Imagehandler", { imageaddress });
       if (result) {
         console.log(result.data.message);
+        updateresponse("Image Upload successfully!");
       }
     } catch (error) {
       console.log(error);
@@ -51,7 +52,7 @@ const ImageUpload = () => {
     Getresponse();
 
     console.log(UserData);
-  }, [imageaddress]);
+  }, [imageaddress,UserData,file]);
 
   return (
     <div className="mt-10 ">
@@ -98,20 +99,22 @@ const ImageUpload = () => {
           <span className="relative">Demo of Frames</span>
         </button>
       </Link>
-      <div className="image flex justify-center mt-12">
+    <h1 className="text-center bg-[#252525] text-[10px]">Preview Image</h1>
+      <div className="image flex  mt-8 justify-center">
+    
         {file === "" ? (
           <Image src={demoDisplay} alt="image" width={400} height={300} />
         ) : (
           <Image src={imageaddress} alt="image" width={400} height={200} />
         )}
       </div>
-      <h1 className=" font-[900] text-center text-[6vh] mt-4 uppercase">
-        Uploaded Frames{" "}
+      <h1 className=" font-[900] text-center text-[3vw] mt-4 uppercase">
+        Click to Delete Frames{" "}
       </h1>
-
+          <div className="slider ">
       {UserData.map((items, index) => {
         return (
-          <div key={index}>
+          <div key={index} >
             <Image
               src={items.imageaddress}
               alt="image"
@@ -121,6 +124,7 @@ const ImageUpload = () => {
           </div>
         );
       })}
+      </div>
     </div>
   );
 };

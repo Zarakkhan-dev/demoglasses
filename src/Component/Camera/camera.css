@@ -9,6 +9,16 @@ video{
 .screen{
     position: relative;
 }
+
+.Frames-image{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 88vh;
+
+    
+
+}
 @media only screen and (max-width: 600px) {
     video{
         object-fit: cover; 

@@ -30,10 +30,6 @@ export default function App() {
   return (
     <>
       <Swiper
-        pagination={{
-          dynamicBullets: true,
-        }}
-        modules={[Pagination]}
         className="mySwiper"
       >
  {UserData.map((items, index) => {
@@ -45,6 +41,7 @@ export default function App() {
               alt="image"
               width={400}
               height={400}
+              className='mt-[14vh]'
             />
             </SwiperSlide>
           </div>

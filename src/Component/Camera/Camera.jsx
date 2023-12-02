@@ -25,7 +25,7 @@ const Camera = () => {
       <div className="VideoFrame">
       <video ref={videoRef} className='Video-Display' ></video>
       </div>
-      <div className="img-glasses">
+      <div className="Frames-image">
     <SliderGlasses/>
     </div>
     </div>

@@ -6,5 +6,5 @@ const userSchema = new mongoose.Schema({
         required:true 
     }
 });
-const User =  mongoose.model.framesUrl || mongoose.model('framesUrl', userSchema);
+const User =  mongoose.models.framesUrl || mongoose.model('framesUrl', userSchema);
 export default User;
