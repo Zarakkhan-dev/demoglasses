@@ -1,12 +1,8 @@
 
 import mongoose from 'mongoose';
-
-const url = process.env.MongoUrl;
-
-const mongourl = url.toString();
 const connectDB = async () => {
   try {
-    await mongoose.connect(mongourl,
+    await mongoose.connect(process.env.MongoUrl,
       {URLSearchParams:true}
       );
     console.log('MongoDB connected successfully');
