@@ -1,0 +1,16 @@
+.VideoFrame{
+height: 88vh;
+overflow: hidden;
+}
+video{
+    height: 89vh;
+    width: 100%;
+}
+.screen{
+    position: relative;
+}
+@media only screen and (max-width: 600px) {
+    video{
+        object-fit: cover; 
+    }
+}
