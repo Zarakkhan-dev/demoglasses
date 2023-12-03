@@ -6,7 +6,6 @@ import Link from "next/link";
 const ImageUpload = () => {
   const [file, updatefile] = useState("");
   const [imageaddress, updateAddress] = useState("");
-  const [serverresponse,updateresponse]= useState("");
   const [UserData, updateData] = useState([]);
 
   function previewFile(file) {
@@ -26,22 +25,22 @@ const ImageUpload = () => {
       event.preventDefault();
       const result = await axios.post("api/Imagehandler", { imageaddress });
       if (result) {
-        console.log(result.data.message);
-        updateresponse("Image Upload successfully!");
+        alert("Image Uploaded Sucessfully!")
       }
     } catch (error) {
       console.log(error);
     }
   };
-
+const deleteitem = async(item)=>{
+const deleteone = await axios.post("api/deletehander",{item})
+if(deleteone){
+  alert("delete Succesfully");
+}
+}
   useEffect(() => {
     async function Getresponse() {
       const response = await axios.get("api/Imagehandler");
-
       if (response) {
-        console.log(response.data.response);
-
-        const UserData = response.data.response;
         updateData(() => {
           return response.data.response;
         });
@@ -51,7 +50,7 @@ const ImageUpload = () => {
     }
     Getresponse();
 
-    console.log(UserData);
+ 
   }, [imageaddress,UserData,file]);
 
   return (
@@ -99,7 +98,7 @@ const ImageUpload = () => {
           <span className="relative">Demo of Frames</span>
         </button>
       </Link>
-    <h1 className="text-center bg-[#252525] text-[10px]">Preview Image</h1>
+    <h1 className="text-center  text-[25px] font-extrabold">Preview Image</h1>
       <div className="image flex  mt-8 justify-center">
     
         {file === "" ? (
@@ -114,7 +113,7 @@ const ImageUpload = () => {
           <div className="slider ">
       {UserData.map((items, index) => {
         return (
-          <div key={index} >
+          <div key={index}  onClick={()=>deleteitem(items.imageaddress)}>
             <Image
               src={items.imageaddress}
               alt="image"
