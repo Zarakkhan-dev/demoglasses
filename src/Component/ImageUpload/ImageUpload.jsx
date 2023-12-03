@@ -51,8 +51,6 @@ if(deleteone){
       }
     }
     Getresponse();
-
- 
   }, [imageaddress,UserData,file]);
 
   return (
@@ -113,9 +111,9 @@ if(deleteone){
         Click to Delete Frames{" "}
       </h1>
           <div className="slider ">
-      {UserData.map((items, index) => {
+      {UserData.map((items) => {
         return (
-          <div key={index}  onClick={()=>deleteitem(items.imageaddress)}>
+          <div key={items._id}  onClick={()=>deleteitem(items.imageaddress)}>
             <Image
               src={items.imageaddress}
               alt="image"

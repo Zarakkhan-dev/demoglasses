@@ -11,6 +11,7 @@ const Camera = () => {
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
           videoRef.current.play();
+          console.log("camera is on ")
         }
       } catch (error) {
         console.error('Error accessing camera:', error);
@@ -19,7 +20,7 @@ const Camera = () => {
 
     getMedia();
   }, []);
-
+  
   return (
     <div className='screen'>
       <div className="VideoFrame">

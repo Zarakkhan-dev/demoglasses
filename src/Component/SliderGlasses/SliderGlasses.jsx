@@ -32,9 +32,9 @@ export default function App() {
       <Swiper
         className="mySwiper"
       >
- {UserData.map((items, index) => {
+ {UserData.map((items) => {
         return (
-          <div key={index}>
+          <div key={items._id}>
             <SwiperSlide>
             <Image
               src={items.imageaddress}
