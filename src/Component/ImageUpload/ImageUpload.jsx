@@ -25,7 +25,9 @@ const ImageUpload = () => {
       event.preventDefault();
       const result = await axios.post("api/Imagehandler", { imageaddress });
       if (result) {
-        alert("Image Uploaded Sucessfully!")
+        alert("Image Uploaded Sucessfully!");
+        updateAddress("");
+        updatefile("");
       }
     } catch (error) {
       console.log(error);
