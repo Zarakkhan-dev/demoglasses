@@ -5,13 +5,11 @@
 .swiper-slide.swiper-slide-active{
     display:flex;
     justify-content: center;
-
     align-items: flex-start;
  
 }
 .swiper-slide:not(.swiper-slide-active){
     display:flex;
     justify-content: center;
-
     align-items: flex-start;
 }

@@ -41,7 +41,7 @@ export default function App() {
               alt="image"
               width={400}
               height={400}
-              className='mt-[14vh]'
+              className='mt-[1vh]'
             />
             </SwiperSlide>
           </div>
