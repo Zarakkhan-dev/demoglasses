@@ -39,9 +39,9 @@ export default function App() {
             <Image
               src={items.imageaddress}
               alt="image"
-              width={400}
-              height={400}
-              className='mt-[1vh]'
+              width={300}
+              height={300}
+              className='mt-[1vh] sliderimage'
             />
             </SwiperSlide>
           </div>
