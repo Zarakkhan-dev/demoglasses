@@ -23,6 +23,8 @@ const ImageUpload = () => {
   const submission = async (event) => {
     try {
       event.preventDefault();
+
+      alert(imageaddress)
       const result = await axios.post("api/Imagehandler", { imageaddress });
       if (result) {
         alert("Image Uploaded Sucessfully!");
